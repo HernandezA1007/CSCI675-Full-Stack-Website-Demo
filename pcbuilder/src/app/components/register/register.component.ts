@@ -12,14 +12,6 @@ import { User } from '../../models/user.model';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
-// export class RegisterComponent {
-//   registerForm = new FormGroup({
-//     username: new FormControl('', [Validators.required, Validators.minLength(6)]),
-//     email: new FormControl('', [Validators.required, Validators.email]),
-//     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-//     confirmPassword: new FormControl('', [Validators.required])
-//   });
-
 export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -37,10 +29,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // passwordMatchValidator(g: FormGroup) {
-  //   return g.get('password')!.value === g.get('confirmPassword')!.value
-  //      ? null : {'mismatch': true};
-  // }
   passwordMatchValidator(): ValidatorFn {
     return (control: AbstractControl): {[key: string]: any} | null => {
       const password = control.get('password');
@@ -49,20 +37,6 @@ export class RegisterComponent implements OnInit {
     };
   }
 
-  /*
-  onSubmit() {
-    // console.log(this.registerForm.value);
-
-    if (this.registerForm.valid) {
-      this.userService.registerUser(this.registerForm.value as User).subscribe({
-        next: (response) => console.log("User registered:", response),
-        error: (error) => console.error("Failed to register user:", error)
-      });
-    } else {
-      console.error("Registration form is not valid:", this.registerForm.errors);
-    }
-  }
-  */
   onSubmit() {
     if (this.registerForm.valid) {
       this.userService.registerUser(this.registerForm.value as User).subscribe({

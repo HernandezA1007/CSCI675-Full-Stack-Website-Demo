@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 // RESTful APIs
-/* Should all be moved to Controller file */
+/* Should all be moved to Controller file? */
 
 // GET /api/users - get all users
 router.get('/', async (req, res) => {
@@ -17,25 +17,6 @@ router.get('/', async (req, res) => {
 });
 
 // POST /api/users/register - create a new user
-// router.post("/register", (req, res) => {
-//     const user = new User(req.body);
-//     user.save((err, user) => {
-//         if (err) {
-//             return res.status(400).send(err);
-//         }
-//         res.status(200).send(user);
-//     });
-// });
-
-// router.post("/register", async (req, res) => {
-//     try {
-//         const newUser = new User(req.body);
-//         await newUser.save();
-//         res.status(201).json(newUser);
-//     } catch (error) {
-//         res.status(500).json({ message: error.message });
-//     }
-// });
 
 // Register a new user
 router.post('/register', async (req, res) => {

@@ -21,10 +21,6 @@ app.use(cors(corsOptions)); // added custom cors options
 app.use(express.json());
 
 // Connect to MongoDB
-// mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//     .then(() => console.log("Connected to MongoDB Atlast"))
-//     .catch((error) => console.error("MongoDB connection error:", error));
-
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -43,10 +39,10 @@ app.get("/", (req, res) => {
     res.send("Hello from the PC Builder backend server");
 });
 app.use("/api/users", userRoutes);
-app.use("/api/shop-items", shopItemRoutes); // shop-items or shopItems?
+app.use("/api/shop-items", shopItemRoutes); 
 app.use("/api/contacts", contactRoutes); 
 
-// mongoose connection..?
+// mongoose connection
 mongoose.connection.once("open", () => {
     console.log("Connected to MongoDB");
 })

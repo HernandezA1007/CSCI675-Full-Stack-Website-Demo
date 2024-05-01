@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { User } from '../models/user.model';
-import { AuthService } from './auth.service'; //
+import { AuthService } from './auth.service'; 
 import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -14,21 +14,10 @@ export class UserService {
 
     constructor(private http: HttpClient, private authService: AuthService) { }
 
-    // getUsers(): Observable<any> {
-    //     return this.http.get<any>(this.apiUrl);
-    // }
-
     // Add a user via register form
-    // addUser(userData: User): Observable<User> {
-    //     return this.http.post<User>(this.apiUrl, userData);
-    // }
     registerUser(userData: User): Observable<any> {
         return this.http.post(`${this.apiUrl}/register`, userData);
     }
-
-    // loginUser(loginData: User): Observable<any> {
-    //     return this.http.post(`${this.apiUrl}/login`, loginData);
-    // }
 
     // This one works 
     loginUser(loginData: User): Observable<any> {

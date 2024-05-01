@@ -14,10 +14,6 @@ export class AdminComponent {
     adminPassword: new FormControl('', [Validators.required])
   });
 
-  // get adminUsername() { return this.adminForm.get('adminUsername'); }
-
-  // get adminPassword() { return this.adminForm.get('adminPassword'); }
-
   onAdminSubmit() {
     console.log(this.adminForm.value);
   }

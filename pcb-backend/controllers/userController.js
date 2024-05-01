@@ -1,6 +1,5 @@
 const User = require("../model/User");
 
-// Get all Users
 const getAllUsers = async (req, res) => {
     const users = await User.find();
     if (!users) {
@@ -9,14 +8,4 @@ const getAllUsers = async (req, res) => {
     res.json(users);
 };
 
-// Create a User
-
-
-// Update a User
-
-
-// Delete a User
-
-
-// Get a User
-
+// Ignore this file

@@ -31,8 +31,4 @@ export class HeaderComponent { // implements OnInit
   //     this.currentUser = user;
   //   });
   // }
-
-  // logout() {
-  //   this.authService.logout();
-  // }
 }
